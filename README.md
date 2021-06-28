@@ -1,4 +1,4 @@
-# movies-vue2-new
+# Movies_vue2
 
 ## Project setup
 ```
