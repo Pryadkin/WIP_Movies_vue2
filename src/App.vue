@@ -1,28 +1,52 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<div class="app">
+		<a-menu
+      class="mainMenu"
+			:default-selected-keys="['1']"
+			:default-open-keys="['sub1']"
+			:mode="mode"
+			:theme="theme"
+		>
+			<a-menu-item key="1">
+				<a-icon type="mail" />
+				My movies
+			</a-menu-item>
+			<a-menu-item key="2">
+				<a-icon type="calendar" />
+				Search
+			</a-menu-item>
+		</a-menu>
+		<router-view />
+	</div>
 </template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
+<script lang="ts">
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+	name: 'home',
+	data() {
+		return {
+			mode: 'inline',
+			theme: 'dark',
+		}
+	},
+	methods: {
+		// changeMode(checked) {
+		// 	this.mode = checked ? 'vertical' : 'inline'
+		// },
+		// changeTheme(checked) {
+		// 	this.theme = checked ? 'dark' : 'light'
+		// },
+	},
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.app {
+	display: flex;
 }
+
+.mainMenu {
+	width: 256px;
+  height: 100vh;
+}
+
 </style>
