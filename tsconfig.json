@@ -6,6 +6,8 @@
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "strictPropertyInitialization": false,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -33,7 +35,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-  ],
+, "src/store/modules/Profile.js"  ],
   "exclude": [
     "node_modules"
   ]

@@ -40,6 +40,10 @@ export default {
 </script>
 
 <style scoped>
+.app {
+	display: flex;
+}
+
 .mainMenu {
 	width: 256px;
   height: 100vh;

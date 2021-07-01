@@ -1,23 +1,29 @@
 <template>
   <div>
     <div class="cards_container">
-      <div class="row" v-for="movie in getMovies" :key="movie.id">
-        <Card v-bind:movie="movie"/>
+      <div 
+        v-for="movie in getMovies" 
+        :key="movie.id"
+        class="row"
+      >
+        <Card :movie="movie"/>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-import Card from './Card'
+<script lang="ts">
+import Vue, { PropType } from 'vue'
+import Card from './Card.vue'
+import { ProfileTypes } from '../../store/Types/ProfileTypes'
 
-export default {
+export default Vue.extend({
   props: {
     profileMovies: Array
   },
   data() {
     return {
-      movies: []
+      movies: Array as PropType<ProfileTypes[]>
     }
   },
   components: {
@@ -29,7 +35,7 @@ export default {
       return this.profileMovies
     }
   }
-}
+})
 </script>
 
 <style scoped>

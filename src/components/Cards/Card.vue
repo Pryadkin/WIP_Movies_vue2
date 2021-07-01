@@ -12,27 +12,44 @@
 </template>
 
 <script lang="ts">
+import Vue, { PropType } from 'vue'
+import { ProfileTypes } from '../../store/Types/ProfileTypes'
+
+type Props = {
+	movie: ProfileTypes
+}
+
+type Computed = {
+	dateFilter: () => string
+}
+
 type Option = {
   year: "numeric" | "2-digit"
 }
 
-export default {
+// <Data, Methods, Computed, Props>
+export default Vue.extend<any, any, Computed, Props>({
+	name: 'card',
 	props: {
 		movie: {
-			type: Object,
+			type: Object as PropType<ProfileTypes>,
 		},
 	},
 	computed: {
-		dateFilter() {
+		dateFilter(): any {
 			const option: Option = { year: 'numeric' }
 
 			// option.year = 'numeric'
 			// console.log(new Intl.DateTimeFormat('ru-RU', option))
 
 			return new Intl.DateTimeFormat('ru-RU', option).format(new Date(this.movie.release_date))
+			// return 'dateTime'
 		},
 	},
-}
+	mounted() {
+		console.log(this.movie)
+	}
+})
 </script>
 
 <style scoped>
