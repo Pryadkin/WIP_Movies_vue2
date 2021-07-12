@@ -28,6 +28,9 @@ export default {
       // console.log(this.profileMovies)
       return this.profileMovies
     }
+  },
+  mounted() {
+    console.log(this.movies)
   }
 }
 </script>

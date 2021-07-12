@@ -1,4 +1,4 @@
-import { api, api_key } from './baseUrl.ts';
+import { api, api_key } from './baseUrl';
 import getFullPathForPosters from './helpers/getFullPathForPosters';
 
 export const fetchMovies = async (name, isWithPicture, page) => {
@@ -23,7 +23,6 @@ export const fetchMovies = async (name, isWithPicture, page) => {
         return movie.poster_path !== null;
       });
     }
-    console.log(data)
 
     data.results = getFullPathForPosters(results);
     return data;

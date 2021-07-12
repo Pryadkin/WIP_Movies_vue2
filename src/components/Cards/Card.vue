@@ -1,16 +1,12 @@
 <template>
-  <div class="col">
-    <a-card hoverable style="width: 240px">
+  <div>
+    <a-card hoverable class="card">
       <img
         slot="cover"
         alt="example"
         :src="movie.poster_path"
       />
-      <a-card-meta :title="movie.title">
-        <template :slot="dateFilter">
-          www.instagram.com
-        </template>
-      </a-card-meta>
+      <a-card-meta :title="movie.title" />
     </a-card>
   </div>
 </template>
@@ -37,7 +33,8 @@ export default {
 
 
 <style scoped>
-  .row .col {
-    width: 200px;
+  .card {
+    width: 150px;
+    margin: 10px;
   }
 </style>
